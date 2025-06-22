@@ -1,8 +1,8 @@
 fun doSomethingWithCollection(collection: Collection<String>): Collection<String>? {
 
-    val groupsByLength = collection.groupBy { s -> TODO() }
+    val groupsByLength = collection.groupBy { it.length }
 
-    val maximumSizeOfGroup = groupsByLength.values.map { group -> TODO() }.maxOrNull()
+    val maximumSizeOfGroup = groupsByLength.values.maxOfOrNull { it.size }
 
-    return groupsByLength.values.firstOrNull { group -> TODO() }
+    return groupsByLength.values.firstOrNull { maximumSizeOfGroup == it.size }
 }
